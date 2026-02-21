@@ -1,8 +1,13 @@
 import { Storage } from 'megajs';
+import 'dotenv/config';
+
+if (!process.env.MEGA_EMAIL || !process.env.MEGA_PASSWORD) {
+    throw new Error('MEGA_EMAIL and MEGA_PASSWORD must be set in environment variables');
+}
 
 const auth = {
-    email: 'Your mega email',
-    password: 'your mega password',
+    email: process.env.MEGA_EMAIL,
+    password: process.env.MEGA_PASSWORD,
     userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.246'
 };
 
