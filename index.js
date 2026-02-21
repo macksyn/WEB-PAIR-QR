@@ -5,6 +5,7 @@ import { fileURLToPath } from 'url';
 
 import qrRouter from './qr.js';
 import pairRouter from './pair.js';
+import botPairRouter from './botpair.js';  // ✅ Bot pairing — plain text response
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use(express.static(__dirname));
 
 app.use('/qr', qrRouter);
 app.use('/code', pairRouter);
+app.use('/botcode', botPairRouter);  // ✅ Bot uses this — returns plain text code only
 
 app.use('/pair', async (req, res) => {
     res.sendFile(path.join(__dirname, 'pair.html'));
