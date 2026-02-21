@@ -14,7 +14,10 @@ const MAX_RECONNECT_ATTEMPTS = 3;
 const SESSION_TIMEOUT = 5 * 60 * 1000;
 const CLEANUP_DELAY = 5000;
 
-const MESSAGE = `...`; // your message
+const MESSAGE = `
+*SESSION GENERATED SUCCESSFULLY* ✅
+
+*GROQ--WHATSAPP* 🥀`; // your message
 
 async function removeFile(FilePath) {
     try {
